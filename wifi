@@ -1,0 +1,30 @@
+#!/bin/bash
+#need to make this file in
+
+sudo cp /etc/network/interfaces /etc/network/interfacesbak
+
+echo
+
+"
+auto lo
+
+iface lo inet loopback
+iface eth0 inet dhcp
+
+allow-hotplug wlan0
+auto wlan0
+
+
+iface wlan0 inet dhcp
+        wpa-ssid "ssid"
+        wpa-psk "password"
+
+''
+>> test2.txt
+
+
+
+
+#sudo nano /etc/network/interfaces
+#sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
